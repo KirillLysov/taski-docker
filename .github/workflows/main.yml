@@ -19,7 +19,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install flake8
+          pip install -r ./backend/requirements.txt
       - name: test flake8
         run: python -m flake8 backend/
+      - name: api test
+        run: python backend/manage.py test
 
     
